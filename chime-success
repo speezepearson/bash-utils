@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Prefixed to a command, runs that command, and then makes a noise
+# indicating whether the command passed or failed.
+#
+# Ubuntu only.
+#
+
+WORDS=($(sh-escape "$@"))
+if eval "${WORDS[@]}"; then
+  NAME='Mallet'
+else
+  NAME='Amsterdam'
+fi
+
+play "/usr/share/sounds/ubuntu/notifications/$NAME.ogg" 2>/dev/null

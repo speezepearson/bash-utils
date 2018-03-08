@@ -1,0 +1,5 @@
+#!/bin/bash
+
+while IFS= read LINE; do
+  sh-escape "$LINE"
+done

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+SAFE_CHARS='A-Za-z0-9_,./:-'
+
+while [ $# -gt 0 ]; do
+    TOKEN=$1; shift
+    sed -e 's|\([^a-zA-Z0-9_,./:-]\)|\\\1|g' <<< $TOKEN
+done

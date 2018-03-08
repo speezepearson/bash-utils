@@ -1,0 +1,11 @@
+#!/bin/bash
+
+QUESTION=$1
+
+read -p "$QUESTION [y/n] " RESPONSE
+
+while ! [ "$RESPONSE" = y -o "$RESPONSE" = n ]; do
+  read -p 'please respond "y" or "n": ' RESPONSE
+done
+
+test "$RESPONSE" = y

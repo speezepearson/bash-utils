@@ -1,0 +1,4 @@
+#!/bin/bash
+
+COMMAND=$(sh-escape "$@" | tr '\n' ' ')
+ask "$COMMAND" && eval "$COMMAND"
